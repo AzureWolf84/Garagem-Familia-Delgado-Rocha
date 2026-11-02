@@ -1,33 +1,5 @@
-GARAGEM DA FAMÍLIA ROCHA — PACOTE INSTALÁVEL
-Edição comercial identificada no aplicativo: 1.0.0
+Garagem da Família Delgado Rocha — versão 1.0.0
 
-ATUALIZAÇÃO DESTA DISTRIBUIÇÃO
-- Atualizada a seção de veículos: cartões mais compactos, informações sem repetição, foto melhor posicionada, ações alinhadas e layout responsivo para telas estreitas.
-- Melhorada a legibilidade dos cartões com fundo opaco e separação visual dos campos.
-- Atualizado o identificador de cache do service worker para que a instalação PWA descarte o shell anterior e carregue esta versão do HTML.
-- O número comercial continua 1.0.0; esta é uma correção de layout, não uma alteração do número de versão do aplicativo.
+Correções: menu suspenso contém somente opções de Dados e sistema; alternância de tema corrigida para funcionar mesmo quando o botão rápido está oculto.
 
-CONTEÚDO
-- index.html: aplicativo completo com a correção visual da seção de veículos.
-- manifest.webmanifest: metadados para instalação PWA.
-- sw.js: cache do aplicativo para acesso offline ao shell.
-- icon-192.png e icon-512.png: ícones de instalação.
-
-COMO INSTALAR
-1. Publique TODOS os arquivos deste pacote na mesma pasta de um servidor HTTPS (ou ambiente localhost para testes).
-2. Abra a página do aplicativo no Chrome/Edge compatível.
-3. Use o comando Instalar aplicativo ou o menu do navegador > Instalar aplicativo / Adicionar à tela inicial.
-4. Se já tinha instalado uma versão anterior, abra o aplicativo com conexão à internet e recarregue-o; o service worker atualizado usa um novo identificador de cache. Se necessário, feche e reabra o aplicativo.
-5. Faça um backup inicial antes de continuar usando os dados.
-
-IMPORTANTE SOBRE DADOS E MIGRAÇÃO
-- Abrir o HTML diretamente por file:// não permite instalação PWA completa.
-- Os dados ficam no armazenamento local do navegador e vinculados à origem do site/dispositivo. Não existe sincronização automática entre aparelhos.
-- Dados previamente guardados na versão file:// não migram automaticamente para o site HTTPS. Exporte um backup na versão antiga e use Backup e dados > Restaurar backup na nova instalação.
-- Os backups contêm registros, fotos e documentos anexados e NÃO são protegidos por senha. Guarde-os em local seguro.
-- PDFs e imagens são armazenados no espaço local do navegador, cuja capacidade varia por navegador/dispositivo. Se houver erro de armazenamento, exporte backup e reduza arquivos antes de continuar.
-- Os alertas internos são calculados ao abrir/usar o aplicativo. Notificações do dispositivo dependem de permissões e suporte do navegador e não são um serviço garantido de notificação em segundo plano.
-- Prazos de documentos oficiais devem ser confirmados nas fontes governamentais competentes. O aplicativo não consulta automaticamente DETRAN, Receita ou seguradoras.
-- A base geral Honda exibida em regras preventivas é uma referência de orientação e não substitui o manual específico de cada modelo/ano.
-
-Faça backups periódicos, especialmente antes de limpar os dados do navegador, trocar de aparelho ou alterar a hospedagem.
+Para instalar o PWA, publique todos os arquivos juntos em servidor HTTPS e abra index.html pelo endereço hospedado. Faça backup dos dados antes de atualizar instalações existentes.
