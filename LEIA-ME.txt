@@ -1,13 +1,5 @@
-GARAGEM DA FAMÍLIA DELGADO ROCHA — PWA 1.0.0 (PACOTE CORRIGIDO)
+Garagem da Família Delgado Rocha — PWA corrigido.
 
-Este pacote inclui o HTML com as correções de menu e alternância de tema e um identificador novo de cache do service worker para forçar a atualização do shell do aplicativo.
+Esta distribuição contém o menu Dados e sistema com a opção Sincronizar agora. A ação abre diretamente a janela de sincronização familiar. O cache foi atualizado e o HTML é recarregado pela rede quando disponível.
 
-ATUALIZAR UMA INSTALAÇÃO EXISTENTE
-1. Publique/substitua TODOS os arquivos deste ZIP no mesmo endereço HTTPS, incluindo index.html e sw.js.
-2. Abra o endereço do aplicativo com conexão à internet e aguarde alguns segundos para o novo service worker ativar. Feche e reabra o PWA.
-3. Se continuar exibindo a versão antiga, feche o PWA, abra o site no navegador e recarregue. Se necessário, remova a instalação antiga e instale novamente.
-4. Antes de limpar dados do site ou reinstalar, exporte um backup. Não limpe o armazenamento do navegador sem ter backup.
-
-O HTML incluído em index.html é o mesmo arquivo disponibilizado separadamente. A instalação PWA requer hospedagem HTTPS (ou localhost para testes); abrir o HTML por file:// não instala um PWA completo.
-
-A sincronização remota entre dispositivos não é validada por este pacote e depende da configuração e dos testes do serviço remoto.
+Para atualizar: substitua TODOS os arquivos no mesmo endereço HTTPS, abra o site no navegador e recarregue. O service worker não consegue atualizar arquivos hospedados se apenas o ZIP for baixado e não publicado no servidor. Faça backup antes de substituir uma instalação.
