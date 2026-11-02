@@ -1,7 +1,5 @@
-Garagem da Família Delgado Rocha — PWA corrigido v1.0.1
+Garagem da Família Delgado Rocha — PWA versão 1.0.2
 
-Correção: chamada RPC create_family_garage agora envia o parâmetro p_name, compatível com a função existente no Supabase.
+IMPORTANTE: antes de usar a sincronização, execute o arquivo SQL de migração no SQL Editor do Supabase. Faça backup antes de publicar.
 
-Para atualizar uma instalação hospedada, publique/substitua TODOS os arquivos deste pacote no mesmo diretório da hospedagem. Depois feche e reabra o PWA. Faça backup dos dados locais antes de substituir arquivos.
-
-Observação: esta alteração corrige a incompatibilidade do nome do parâmetro; não valida as credenciais/configurações do seu projeto Supabase nem confirma a sincronização real em produção.
+Publique todos os arquivos desta pasta na mesma pasta da hospedagem, substituindo os arquivos da versão anterior. O pacote não altera automaticamente o projeto Supabase nem a hospedagem.
