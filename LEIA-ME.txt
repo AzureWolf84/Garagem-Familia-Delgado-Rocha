@@ -1,5 +1,13 @@
-Garagem da Família Delgado Rocha — versão 1.0.0
+GARAGEM DA FAMÍLIA DELGADO ROCHA — PWA 1.0.0 (PACOTE CORRIGIDO)
 
-Correções: menu suspenso contém somente opções de Dados e sistema; alternância de tema corrigida para funcionar mesmo quando o botão rápido está oculto.
+Este pacote inclui o HTML com as correções de menu e alternância de tema e um identificador novo de cache do service worker para forçar a atualização do shell do aplicativo.
 
-Para instalar o PWA, publique todos os arquivos juntos em servidor HTTPS e abra index.html pelo endereço hospedado. Faça backup dos dados antes de atualizar instalações existentes.
+ATUALIZAR UMA INSTALAÇÃO EXISTENTE
+1. Publique/substitua TODOS os arquivos deste ZIP no mesmo endereço HTTPS, incluindo index.html e sw.js.
+2. Abra o endereço do aplicativo com conexão à internet e aguarde alguns segundos para o novo service worker ativar. Feche e reabra o PWA.
+3. Se continuar exibindo a versão antiga, feche o PWA, abra o site no navegador e recarregue. Se necessário, remova a instalação antiga e instale novamente.
+4. Antes de limpar dados do site ou reinstalar, exporte um backup. Não limpe o armazenamento do navegador sem ter backup.
+
+O HTML incluído em index.html é o mesmo arquivo disponibilizado separadamente. A instalação PWA requer hospedagem HTTPS (ou localhost para testes); abrir o HTML por file:// não instala um PWA completo.
+
+A sincronização remota entre dispositivos não é validada por este pacote e depende da configuração e dos testes do serviço remoto.
