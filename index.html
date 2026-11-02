@@ -827,7 +827,7 @@ window.__garageBridge = {
   if(error)throw error;
   if(members&&members.length){garageId=members[0].garage_id;return;}
   const name=$('cloudGarageName').value.trim()||'Garagem da Família Delgado Rocha';
-  const {data:id,error:createError}=await client.rpc('create_family_garage',{garage_name:name});
+  const {data:id,error:createError}=await client.rpc('create_family_garage',{p_name:name});
   if(createError)throw createError; garageId=id;
  }
  async function pullRemote(){

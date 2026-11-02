@@ -1,5 +1,7 @@
-Garagem da Família Delgado Rocha — PWA corrigido.
+Garagem da Família Delgado Rocha — PWA corrigido v1.0.1
 
-Esta distribuição contém o menu Dados e sistema com a opção Sincronizar agora. A ação abre diretamente a janela de sincronização familiar. O cache foi atualizado e o HTML é recarregado pela rede quando disponível.
+Correção: chamada RPC create_family_garage agora envia o parâmetro p_name, compatível com a função existente no Supabase.
 
-Para atualizar: substitua TODOS os arquivos no mesmo endereço HTTPS, abra o site no navegador e recarregue. O service worker não consegue atualizar arquivos hospedados se apenas o ZIP for baixado e não publicado no servidor. Faça backup antes de substituir uma instalação.
+Para atualizar uma instalação hospedada, publique/substitua TODOS os arquivos deste pacote no mesmo diretório da hospedagem. Depois feche e reabra o PWA. Faça backup dos dados locais antes de substituir arquivos.
+
+Observação: esta alteração corrige a incompatibilidade do nome do parâmetro; não valida as credenciais/configurações do seu projeto Supabase nem confirma a sincronização real em produção.
