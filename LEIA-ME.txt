@@ -1,36 +1,30 @@
-GARAGEM DA FAMÍLIA DELGADO ROCHA — PWA 1.1.0
+GARAGEM DA FAMÍLIA DELGADO ROCHA — PWA 1.1.1
 
 CONTEÚDO
-- index.html: aplicativo atualizado.
+- index.html: aplicativo atualizado, com integração OneDrive removida e navegação mobile reformulada.
 - manifest.webmanifest, sw.js e ícones: instalação PWA e cache offline.
 
 ATUALIZAÇÃO
 1. Publique/substitua TODOS os arquivos deste pacote no mesmo endereço HTTPS da versão anterior.
-2. Abra o aplicativo conectado à internet para que o service worker atualize o cache.
-3. Antes de migrar de endereço ou limpar dados do navegador, exporte um backup local.
+2. Abra o aplicativo conectado à internet para que o service worker instale o novo cache 1.1.1.
+3. Antes de migrar de endereço ou limpar dados do navegador, exporte um backup JSON local.
+4. Os dados existentes permanecem no armazenamento local do navegador; esta atualização não limpa registros, veículos, documentos ou anexos.
 
-REGRAS NOVAS
-- Manutenções e serviços com KM inferior à leitura atual exigem horário manual.
-- A quilometragem é comparada com o histórico cronológico de leituras e registros do veículo; incompatibilidades bloqueiam o salvamento.
-- Serviços aceitam vários comprovantes (JPG, PNG, WEBP e PDF), com limite de 5 MB por arquivo. A quantidade é limitada apenas pelo armazenamento disponível no navegador.
-- O backup JSON local continua disponível e inclui os anexos.
+MUDANÇAS DA VERSÃO 1.1.1
+- Removida integralmente a integração OneDrive/Microsoft Entra/MSAL/Microsoft Graph, incluindo telas, configuração e chamadas externas.
+- Preservados backup completo JSON, restauração validada, exportação CSV, análise de armazenamento e verificação de integridade.
+- Reformulada a navegação mobile: quatro destinos principais e painel "Mais opções" para os demais módulos, sem ocultar Odômetros, Documentos, Abastecimentos, Despesas, Relatórios, Histórico, Backup ou Configurações.
+- Reorganizados cabeçalho, títulos, cartões, formulários, botões, tabelas e modal para telas estreitas.
+- Mantida a paleta cromática existente do aplicativo.
+- Cache do service worker atualizado para 1.1.1.
 
-ONEDRIVE — CONFIGURAÇÃO ÚNICA NECESSÁRIA
-A integração utiliza Microsoft Authentication Library (MSAL) e Microsoft Graph. Para ativá-la:
-1. No Microsoft Entra, registre um aplicativo com suporte a contas Microsoft pessoais.
-2. Em Authentication, adicione a plataforma Single-page application (SPA) usando exatamente a URI de redirecionamento mostrada na tela Backup e dados do aplicativo publicado.
-3. Em API permissions, adicione a permissão delegada Microsoft Graph: Files.ReadWrite.AppFolder.
-4. Copie o Application (client) ID para o campo do aplicativo e salve.
-5. Clique em Conectar ao OneDrive e conclua a autorização na página oficial da Microsoft.
+DADOS E BACKUP
+- Os dados permanecem armazenados localmente no navegador e no aparelho em que foram cadastrados.
+- O backup JSON inclui os registros e arquivos anexados suportados pelo aplicativo.
+- A restauração valida o arquivo e apresenta um resumo antes de substituir os dados locais.
+- O backup não é protegido por senha. Guarde o arquivo em local confiável.
+- A capacidade de armazenamento depende do navegador e do dispositivo. Faça backups periódicos.
 
-A aplicação não usa client secret nem solicita a senha Microsoft dentro do app. A autorização usa MSAL e fluxo SPA com PKCE. O envio usa a pasta isolada do aplicativo no OneDrive. O script MSAL é carregado sob demanda pela internet; o restante do aplicativo continua funcionando offline.
-
-COMPORTAMENTO DO BACKUP
-- Automático: atualiza um arquivo fixo de backup atual após alterações locais salvas (com atraso curto para agrupar alterações).
-- Manual: cria um novo arquivo com data/hora, preservando os snapshots manuais anteriores.
-- Sem conexão: o backup local permanece disponível e o envio automático fica pendente para quando a conexão voltar e houver autorização válida.
-
-LIMITAÇÕES E TESTES
-- O OneDrive só poderá ser validado ponta a ponta depois de cadastrar o Client ID, publicar em HTTPS e autorizar uma conta Microsoft real.
-- O armazenamento local do navegador tem quota variável. Apesar de aceitar vários anexos, arquivos grandes podem exceder a capacidade do aparelho; mantenha backups externos.
-- PWA completo e service worker exigem HTTPS (ou localhost em desenvolvimento). Abrir index.html via file:// não permite a integração OneDrive nem instalação PWA completa.
+LIMITAÇÕES
+- Esta edição não oferece sincronização entre aparelhos nem backup em nuvem automático.
+- PWA completo e service worker exigem HTTPS (ou localhost em desenvolvimento). Abrir index.html via file:// não permite instalação PWA completa.
