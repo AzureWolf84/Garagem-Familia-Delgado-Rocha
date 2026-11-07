@@ -1,5 +1,19 @@
-Garagem da Família Delgado Rocha — PWA versão 1.0.2
+GARAGEM DA FAMÍLIA DELGADO ROCHA — PWA 1.0.0 (pacote corrigido)
 
-IMPORTANTE: antes de usar a sincronização, execute o arquivo SQL de migração no SQL Editor do Supabase. Faça backup antes de publicar.
+CONTEÚDO
+- index.html: aplicativo completo.
+- manifest.webmanifest: metadados de instalação PWA.
+- sw.js: cache do aplicativo para abertura offline após a primeira carga.
+- icon.svg: ícone do aplicativo.
 
-Publique todos os arquivos desta pasta na mesma pasta da hospedagem, substituindo os arquivos da versão anterior. O pacote não altera automaticamente o projeto Supabase nem a hospedagem.
+INSTALAÇÃO
+1. Hospede TODOS os arquivos desta pasta no mesmo diretório de um servidor HTTPS.
+2. Acesse o endereço HTTPS pelo Chrome/Android.
+3. Use o comando Instalar aplicativo do navegador ou o botão Instalar do aplicativo.
+
+IMPORTANTE
+- Abrir index.html diretamente como arquivo local (file://) não instala um PWA completo.
+- O service worker e a instalação PWA exigem HTTPS (localhost serve apenas para testes).
+- Os dados são armazenados localmente no navegador/aparelho. Não há Supabase nem sincronização automática.
+- Antes de trocar de aparelho, limpar dados do navegador ou migrar para outra hospedagem, exporte um backup em Backup e dados.
+- A instalação em outro endereço/origem cria um armazenamento local separado; restaure o backup manualmente se necessário.
