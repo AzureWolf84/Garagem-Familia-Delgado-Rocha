@@ -1,19 +1,36 @@
-GARAGEM DA FAMÍLIA DELGADO ROCHA — PWA 1.0.0 (pacote corrigido)
+GARAGEM DA FAMÍLIA DELGADO ROCHA — PWA 1.1.0
 
 CONTEÚDO
-- index.html: aplicativo completo.
-- manifest.webmanifest: metadados de instalação PWA.
-- sw.js: cache do aplicativo para abertura offline após a primeira carga.
-- icon.svg: ícone do aplicativo.
+- index.html: aplicativo atualizado.
+- manifest.webmanifest, sw.js e ícones: instalação PWA e cache offline.
 
-INSTALAÇÃO
-1. Hospede TODOS os arquivos desta pasta no mesmo diretório de um servidor HTTPS.
-2. Acesse o endereço HTTPS pelo Chrome/Android.
-3. Use o comando Instalar aplicativo do navegador ou o botão Instalar do aplicativo.
+ATUALIZAÇÃO
+1. Publique/substitua TODOS os arquivos deste pacote no mesmo endereço HTTPS da versão anterior.
+2. Abra o aplicativo conectado à internet para que o service worker atualize o cache.
+3. Antes de migrar de endereço ou limpar dados do navegador, exporte um backup local.
 
-IMPORTANTE
-- Abrir index.html diretamente como arquivo local (file://) não instala um PWA completo.
-- O service worker e a instalação PWA exigem HTTPS (localhost serve apenas para testes).
-- Os dados são armazenados localmente no navegador/aparelho. Não há Supabase nem sincronização automática.
-- Antes de trocar de aparelho, limpar dados do navegador ou migrar para outra hospedagem, exporte um backup em Backup e dados.
-- A instalação em outro endereço/origem cria um armazenamento local separado; restaure o backup manualmente se necessário.
+REGRAS NOVAS
+- Manutenções e serviços com KM inferior à leitura atual exigem horário manual.
+- A quilometragem é comparada com o histórico cronológico de leituras e registros do veículo; incompatibilidades bloqueiam o salvamento.
+- Serviços aceitam vários comprovantes (JPG, PNG, WEBP e PDF), com limite de 5 MB por arquivo. A quantidade é limitada apenas pelo armazenamento disponível no navegador.
+- O backup JSON local continua disponível e inclui os anexos.
+
+ONEDRIVE — CONFIGURAÇÃO ÚNICA NECESSÁRIA
+A integração utiliza Microsoft Authentication Library (MSAL) e Microsoft Graph. Para ativá-la:
+1. No Microsoft Entra, registre um aplicativo com suporte a contas Microsoft pessoais.
+2. Em Authentication, adicione a plataforma Single-page application (SPA) usando exatamente a URI de redirecionamento mostrada na tela Backup e dados do aplicativo publicado.
+3. Em API permissions, adicione a permissão delegada Microsoft Graph: Files.ReadWrite.AppFolder.
+4. Copie o Application (client) ID para o campo do aplicativo e salve.
+5. Clique em Conectar ao OneDrive e conclua a autorização na página oficial da Microsoft.
+
+A aplicação não usa client secret nem solicita a senha Microsoft dentro do app. A autorização usa MSAL e fluxo SPA com PKCE. O envio usa a pasta isolada do aplicativo no OneDrive. O script MSAL é carregado sob demanda pela internet; o restante do aplicativo continua funcionando offline.
+
+COMPORTAMENTO DO BACKUP
+- Automático: atualiza um arquivo fixo de backup atual após alterações locais salvas (com atraso curto para agrupar alterações).
+- Manual: cria um novo arquivo com data/hora, preservando os snapshots manuais anteriores.
+- Sem conexão: o backup local permanece disponível e o envio automático fica pendente para quando a conexão voltar e houver autorização válida.
+
+LIMITAÇÕES E TESTES
+- O OneDrive só poderá ser validado ponta a ponta depois de cadastrar o Client ID, publicar em HTTPS e autorizar uma conta Microsoft real.
+- O armazenamento local do navegador tem quota variável. Apesar de aceitar vários anexos, arquivos grandes podem exceder a capacidade do aparelho; mantenha backups externos.
+- PWA completo e service worker exigem HTTPS (ou localhost em desenvolvimento). Abrir index.html via file:// não permite a integração OneDrive nem instalação PWA completa.
