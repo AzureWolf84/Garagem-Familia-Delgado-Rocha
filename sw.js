@@ -1,7 +1,7 @@
 // Service worker: o app inteiro está em index.html, então basta guardar esse arquivo e os ícones.
 // Estratégia: rede primeiro (sempre a versão mais nova quando há internet) e cache como reserva offline.
 const CACHE = 'garagem-v1-6-8';
-const SHELL = ['./', './index.html', './manifest.webmanifest', './icons/icon-192.png', './icons/icon-512.png', './icons/icon-maskable-512.png'];
+const SHELL = ['./', './index.html', './manifest.webmanifest', './icon-192.png', './icon-512.png', './icon-maskable-512.png'];
 
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(SHELL)).then(() => self.skipWaiting()));

@@ -2017,7 +2017,7 @@ await hydrateBlobs();wire();installExtensions();installV14Events();installBackgr
     try{const r=await fetch('manifest.webmanifest',{cache:'no-store'});const j=r.ok?await r.json():null;
       lines.push('• Manifesto (manifest.webmanifest): '+(j&&j.icons?'encontrado':'NÃO encontrado (HTTP '+r.status+')'));}
     catch(e){lines.push('• Manifesto (manifest.webmanifest): erro ao ler')}
-    try{const r=await fetch('icons/icon-512.png',{cache:'no-store'});lines.push('• Ícone 512 px: '+(r.ok?'encontrado':'NÃO encontrado (HTTP '+r.status+')'));}
+    try{const r=await fetch('icon-512.png',{cache:'no-store'});lines.push('• Ícone 512 px: '+(r.ok?'encontrado':'NÃO encontrado (HTTP '+r.status+')'));}
     catch(e){lines.push('• Ícone 512 px: erro ao ler')}
     return lines.join('\n');
   };
