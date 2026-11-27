@@ -1,8 +1,1 @@
-GARAGEM DA FAMÍLIA DELGADO ROCHA - versão 2.6.0 (GitHub Pages)
-
-1. Crie um repositório público (ex.: garagem).
-2. Envie TODOS os arquivos desta pasta para a raiz do repositório.
-3. Settings > Pages > Deploy from a branch > main > / (root).
-4. O endereço será https://SEUUSUARIO.github.io/garagem/
-5. O rodapé deve mostrar "Edição 2.6.0".
-6. Para instalar no celular: abra o endereço no Chrome e vá em Configurações > Instalar.
+GARAGEM DA FAMILIA DELGADO ROCHA - versao 3.1.0 (GitHub Pages). Envie todos os arquivos para a raiz do repositorio. O rodape deve mostrar Edicao 3.1.0.
